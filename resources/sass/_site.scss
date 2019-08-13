@@ -1,0 +1,227 @@
+// Configuracoes gerais de css
+
+// Font principal do site
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+
+body,
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Helpers
+  -------------------------------------------------- */
+
+.font-600 {
+    font-weight: 600;
+}
+
+
+
+// Banner Home
+
+.jumbotron {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-bottom: 0;
+    background-image: url('./public/img/bg/bg-home.jpg');
+    background-size: cover;
+    background-position: center;
+    color: $white;
+}
+
+@media (min-width: 768px) {
+    .jumbotron {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+}
+
+.jumbotron p:last-child {
+    margin-bottom: 0;
+}
+
+.jumbotron-heading {
+    font-weight: 300;
+}
+
+.jumbotron .container {
+    max-width: 40rem;
+}
+
+.jumbotron #buscar-home {
+    text-align: left;
+}
+
+.card .home-destaque {
+    max-height: 230px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+
+// Configurações de formulário
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+    height: 3.125rem;
+    padding: .75rem;
+}
+
+.form-label-group>label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    /* Override default `<label>` margin */
+    line-height: 1.5;
+    color: #495057;
+    pointer-events: none;
+    cursor: text;
+    /* Match the input under the label */
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+    color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+    color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+    color: transparent;
+}
+
+.form-label-group input::placeholder {
+    color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+    padding-top: 1.25rem;
+    padding-bottom: .25rem;
+}
+
+.form-label-group input:not(:placeholder-shown)~label {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    font-size: 12px;
+    color: #777;
+}
+
+/* Fallback for Edge
+  -------------------------------------------------- */
+@supports (-ms-ime-align: auto) {
+    .form-label-group>label {
+        display: none;
+    }
+
+    .form-label-group input::-ms-input-placeholder {
+        color: #777;
+    }
+}
+
+/* Fallback for IE
+  -------------------------------------------------- */
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+    .form-label-group>label {
+        display: none;
+    }
+
+    .form-label-group input:-ms-input-placeholder {
+        color: #777;
+    }
+}
+
+.form-control {
+    font-weight: 300;
+    color: #495057;
+    background-color: #FFFFFF;
+    border: 3px solid #ced4da;
+    transition: all 300ms ease-in-out;
+}
+
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: $primary;
+    outline: 0;
+    box-shadow: none;
+    transition: all 300ms ease-in-out;
+}
+
+
+
+footer {
+    background-color: $primary;
+    color: $white;
+    padding: 20px 0;
+}
+
+
+
+/* Lista de resultados
+  -------------------------------------------------- */
+
+.card.lista-card {
+    max-height: 165px;
+}
+
+.card.lista-card img {
+    max-height: 163px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* Detalhes do veículo
+  -------------------------------------------------- */
+
+
+.owl-carousel .owl-item img {
+    display: block;
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+    position: absolute;
+    left: 0;
+    bottom: 124px;
+    font-size: 110px;
+    color: #FFF;
+    text-shadow: 1px 1px 4px #00000060;
+}
+
+.owl-carousel .owl-nav button.owl-next {
+    position: absolute;
+    right: 0;
+    bottom: 124px;
+    font-size: 110px;
+    color: #FFF;
+    text-shadow: 1px 1px 4px #00000060;
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background: transparent;
+    color: #eee;
+    text-decoration: none;
+}

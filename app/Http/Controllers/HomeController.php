@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Car;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+
     }
 
     /**
@@ -23,6 +24,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $cars = Car::all();
+
+        // foreach ($cars as $car){
+
+        //     $carPhotos = $car->carPhoto;
+
+        //     foreach ($carPhotos as $carPhoto ) {
+        //         echo $carPhoto->path;
+        //     }
+        // }
+
+        return view('home', compact('cars'));
     }
 }

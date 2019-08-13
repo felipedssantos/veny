@@ -11,16 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/teste', ['middleware' => ['auth', 'needsRole:admin'], function() {
+Route::get('/', 'HomeController@index');
+Route::get('/veiculo/{id}', 'CarController@show')->name('veiculo-detalhes');
+Route::get('/lista', 'CarController@list')->name('lista-veiculos');
 
-    return 'BLAH BLAH BLAH';
 
-}]);
+Route::group(['prefix' => 'painel', 'middleware' => ['auth', 'needsRole:user']], function () {
+
+    Route::get('/dashboard/{id}', 'DashboardController@index')->name('dashboard');
+
+});
